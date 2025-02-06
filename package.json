@@ -4,12 +4,11 @@
     "description": "Example Express app with E2E tests",
     "main": "src/server.js",
     "scripts": {
-      "start": "node src/server.js",
-      "dev": "nodemon src/server.js",
-      "test": "jest --detectOpenHandles",
-      "test:e2e": "playwright test",
-      "test:e2e:ui": "playwright test --ui"
-    },
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js",
+        "test": "jest --detectOpenHandles",
+        "test:e2e": "playwright test"
+      },
     "dependencies": {
       "express": "^4.18.2"
     },
