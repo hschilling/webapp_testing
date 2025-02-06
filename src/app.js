@@ -5,7 +5,27 @@ const app = express();
 app.use(express.json());
 app.use(express.static('public'));
 
-// Serve HTML page
+// API Routes
+app.get('/api', (req, res) => {
+    res.json({ message: 'Welcome to the API' });
+});
+
+app.get('/api/users', (req, res) => {
+    res.json([
+        { id: 1, name: 'John' },
+        { id: 2, name: 'Jane' }
+    ]);
+});
+
+app.post('/api/users', (req, res) => {
+    const { name } = req.body;
+    if (!name) {
+        return res.status(400).json({ error: 'Name is required' });
+    }
+    res.status(201).json({ id: 3, name });
+});
+
+// Web Routes
 app.get('/', (req, res) => {
     res.send(`
         <!DOCTYPE html>
